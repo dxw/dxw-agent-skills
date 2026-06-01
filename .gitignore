@@ -1,0 +1,20 @@
+# Ignore node modules
+node_modules
+
+# Ignore the 11ty site build
+_site
+
+# VS Code local settings
+.vscode
+
+.DS_Store
+.env
+
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
