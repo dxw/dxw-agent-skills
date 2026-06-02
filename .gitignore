@@ -1,13 +1,16 @@
 # Ignore node modules
 node_modules
 
-# Ignore the 11ty site build
-_site
-
-# VS Code local settings
-.vscode
-
+# macOS system files
 .DS_Store
+*.tmp
+*.tmp
+
+# Generated files
+/llms.txt
+*.orig
+
+# Local private files
 .env
 
 # Yarn
