@@ -6,9 +6,7 @@
     "files.trimTrailingWhitespace": false,
     "editor.formatOnSave": true
   },
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [],
   "files.associations": {
     "*.agent.md": "chatagent",
     "*.instructions.md": "instructions",
