@@ -25,3 +25,4 @@ node_modules
 # Site build output
 /site/_site
 /site/.cache
+/site/src/assets/css/
