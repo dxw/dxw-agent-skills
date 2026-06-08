@@ -1,0 +1,8 @@
+<label class="version-switcher" for="version-select">
+  <span>Version</span>
+  <select id="version-select" disabled>
+    {% for version in versions.all %}
+    <option {% if version == versions.latest %}selected{% endif %}>{{ version | versionLabel }}</option>
+    {% endfor %}
+  </select>
+</label>

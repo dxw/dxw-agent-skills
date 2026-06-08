@@ -1,0 +1,5 @@
+---
+title: Authoring Skills
+---
+
+When writing or updating skill docs, include full frontmatter metadata and clear descriptions.

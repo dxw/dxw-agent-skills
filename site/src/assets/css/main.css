@@ -1,0 +1,429 @@
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+/* ==========================================================================
+BASE VARIABLES
+========================================================================== */
+:root {
+  font-size: 18px;
+  --color-dxw-navy: rgba( 36, 55, 70, 1 );
+  --color-dxw-cream: rgba( 243, 241, 233, 1 );
+  --color-dxw-ivory: rgba( 249, 248, 245, 1 );
+  --color-dxw-yellow: rgba( 255, 158, 24, 1 );
+  --color-dxw-yellow-mid: rgba( 255, 178, 89, 1 );
+  --color-dxw-yellow-light: rgba( 252, 214, 114, 1 );
+  --color-dxw-orange: rgba( 255, 92, 53, 1 );
+  --color-dxw-orange-mid: rgba( 255, 141, 107, 1 );
+  --color-dxw-orange-light: rgba( 255, 164, 137, 1 );
+  --color-dxw-red: rgba( 255, 89, 90, 1 );
+  --color-dxw-red-mid: rgba( 255, 129, 137, 1 );
+  --color-dxw-red-light: rgba( 255, 177, 185, 1 );
+  --color-dxw-purple: rgba( 105, 72, 142, 1 );
+  --color-dxw-purple-mid: rgba( 116, 115, 192, 1 );
+  --color-dxw-purple-light: rgba( 167, 164, 223, 1 );
+  --color-dxw-teal: rgba( 9, 97, 93, 1 );
+  --color-dxw-teal-mid: rgba( 0, 148, 144, 1 );
+  --color-dxw-teal-light: rgba( 128, 199, 188, 1 );
+  --color-dxw-blue: rgba( 0, 72, 118, 1 );
+  --color-dxw-blue-mid: rgba( 0, 154, 191, 1 );
+  --color-dxw-blue-light: rgba( 115, 195, 213, 1 );
+  --color-background-dark: var(--color-dxw-navy);
+  --color-background-light: var(--color-dxw-ivory);
+  --color-background: var(--color-background-dark);
+  --color-text-dark: var(--color-dxw-navy);
+  --color-text-light: var(--color-dxw-ivory);
+  --color-text: var(--color-text-dark);
+  --color-border: var(--color-dxw-yellow-light);
+  --bg: var(--color-background-light);
+  --bg-accent: var(--color-background-dark);
+  --surface: var(--color-background-light);
+  --brand: var(--color-dxw-blue);
+  --brand-strong: var(--color-dxw-blue-mid);
+  --warn: var(--color-dxw-red);
+  --border: var(--color-yellow-mid);
+  --shadow: var(--color-dxw-blue);
+  --font-dwx-primary: "Cardo", serif;
+  --font-dwx-secondary: "Poppins", sans-serif;
+  --font-primary: var(--font-dwx-primary);
+  --font-secondary: var(--font-dwx-secondary);
+  --font-headings: var(--font-dwx-secondary);
+  --font-weight-bold: 700;
+  --font-weight-semi-bold: 600;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
+  --font-weight-headings: var(--font-weight-bold);
+  --size-000: -.5rem;
+  --size-00: -.25rem;
+  --size-1: .25rem;
+  --size-2: .5rem;
+  --size-3: 1rem;
+  --size-4: 1.25rem;
+  --size-5: 1.5rem;
+  --size-6: 1.75rem;
+  --size-7: 2rem;
+  --size-8: 3rem;
+  --size-9: 4rem;
+  --size-10: 5rem;
+  --size-11: 7.5rem;
+  --size-12: 10rem;
+  --size-13: 15rem;
+  --size-14: 20rem;
+  --size-15: 30rem;
+  --size-px-000: -8px;
+  --size-px-00: -4px;
+  --size-px-01: 1px;
+  --size-px-02: 2px;
+  --size-px-1: 4px;
+  --size-px-2: 8px;
+  --size-px-3: 16px;
+  --size-px-4: 20px;
+  --size-px-5: 24px;
+  --size-px-6: 28px;
+  --size-px-7: 32px;
+  --size-px-8: 48px;
+  --size-px-9: 64px;
+  --size-px-10: 80px;
+  --size-px-11: 120px;
+  --size-px-12: 160px;
+  --size-px-13: 240px;
+  --size-px-14: 320px;
+  --size-px-15: 480px;
+  --size-fluid-1: clamp(.5rem, 1vw, 1rem);
+  --size-fluid-2: clamp(1rem, 2vw, 1.5rem);
+  --size-fluid-3: clamp(1.5rem, 3vw, 2rem);
+  --size-fluid-4: clamp(2rem, 4vw, 3rem);
+  --size-fluid-5: clamp(4rem, 5vw, 5rem);
+  --size-fluid-6: clamp(5rem, 7vw, 7.5rem);
+  --size-fluid-7: clamp(7.5rem, 10vw, 10rem);
+  --size-fluid-8: clamp(10rem, 20vw, 15rem);
+  --size-fluid-9: clamp(15rem, 30vw, 20rem);
+  --size-fluid-10: clamp(20rem, 40vw, 30rem);
+  --size-content-1: 20ch;
+  --size-content-2: 45ch;
+  --size-content-3: 60ch;
+  --size-header-1: 20ch;
+  --size-header-2: 25ch;
+  --size-header-3: 35ch;
+  --size-xxs: 240px;
+  --size-xs: 360px;
+  --size-sm: 480px;
+  --size-md: 768px;
+  --size-lg: 1024px;
+  --size-xl: 1440px;
+  --size-xxl: 1920px;
+  --size-relative-000: -.5ch;
+  --size-relative-00: -.25ch;
+  --size-relative-1: .25ch;
+  --size-relative-2: .5ch;
+  --size-relative-3: 1ch;
+  --size-relative-4: 1.25ch;
+  --size-relative-5: 1.5ch;
+  --size-relative-6: 1.75ch;
+  --size-relative-7: 2ch;
+  --size-relative-8: 3ch;
+  --size-relative-9: 4ch;
+  --size-relative-10: 5ch;
+  --size-relative-11: 7.5ch;
+  --size-relative-12: 10ch;
+  --size-relative-13: 15ch;
+  --size-relative-14: 20ch;
+  --size-relative-15: 30ch;
+  --font-size-fluid-000: clamp(0.5rem, 1.3vw, 0.75rem);
+  --font-size-fluid-00: clamp(0.6666666667rem, 1.4vw, 0.9rem);
+  --font-size-fluid-0: clamp(0.9rem, 1.5vw, 1rem);
+  --font-size-fluid-01: clamp(0.95rem, 1.75vw, 1.1rem);
+  --font-size-fluid-21: clamp(1.25rem, 2.5vw, 1.75rem);
+  --font-size-fluid-3: clamp(2rem, 4vw, 2.6666666667rem);
+  --font-size-fluid-4: clamp(2.6666666667rem, 5vw, 3.5rem);
+  --font-size-fluid-5: clamp(3rem, 7vw, 4rem);
+  --font-size-fluid-6: clamp(3.5rem, 7vw, 5rem);
+}
+
+:where(body) {
+  font-family: var(--font-primary);
+  font-style: normal;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text);
+  background-color: var(--color-background-light);
+}
+
+:where(a) {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1-style,
+.h2-style,
+.h3-style,
+.h4-style,
+.h5-style,
+.h6-style {
+  color: inherit;
+  font-family: var(--font-headings);
+  font-weight: var(--font-weight-headings);
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  margin: 0;
+  mix-blend-mode: normal;
+  margin-block: 1.5rem 0.75rem;
+}
+h1.h-underline,
+h2.h-underline,
+h3.h-underline,
+h4.h-underline,
+h5.h-underline,
+h6.h-underline,
+.h1-style.h-underline,
+.h2-style.h-underline,
+.h3-style.h-underline,
+.h4-style.h-underline,
+.h5-style.h-underline,
+.h6-style.h-underline {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--color-brand-primary);
+}
+
+h1,
+.h1-style {
+  font-size: var(--font-size-fluid-3);
+}
+
+h2,
+.h2-style {
+  font-size: var(--font-size-fluid-2);
+}
+
+h3,
+.h3-style {
+  font-size: var(--font-size-fluid-1);
+  max-inline-size: var(--size-header-3);
+}
+
+h4,
+.h4-style {
+  font-size: var(--font-size-fluid-01);
+  max-inline-size: var(--size-header-3);
+}
+
+h5,
+.h5-style {
+  font-size: var(--font-size-fluid-0);
+  max-inline-size: var(--size-header-3);
+}
+
+.secondary-font {
+  font-family: var(--font-secondary);
+}
+
+.headings-font {
+  font-family: var(--font-headings);
+}
+
+.bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.centered {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 280px minmax(200px, 750px);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 1rem auto 2rem;
+  padding: 0 1rem;
+}
+
+.content,
+.sidebar,
+.topbar,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 920px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.sidebar {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  height: fit-content;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 0.5rem 0;
+}
+
+.sidebar a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.content {
+  padding: 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.doc-article h1 {
+  margin-top: 0;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-list li {
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+#search-results {
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#search-results li {
+  margin: 0.3rem 0;
+}
+
+.meta-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag,
+.chip {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.78rem;
+}
+
+.warn {
+  color: var(--warn);
+}
+
+.version-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer {
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
+  color: var(--color-dxw-teal);
+}
+
+:where(pre) {
+  white-space: auto;
+  min-inline-size: 0;
+  max-inline-size: max-content;
+  writing-mode: lr;
+  direction: ltr;
+  overflow: auto;
+  padding: var(--size-3);
+  box-shadow: rgba(0, 0, 0, 0.1) -1px -1px 2px, rgba(0, 0, 0, 0.1) 1px 1px 2px;
+}
+
+@media (max-width: 920px) {
+  .topbar {
+    flex-wrap: wrap;
+  }
+}
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+.topnav {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-secondary);
+}
+.topnav a {
+  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+  font-size: var(--size-fluid-1);
+  font-weight: var(--font-weight-bold);
+}
+.topnav a:hover {
+  text-decoration-color: var(--color-dxw-teal);
+}
+.topnav a.current {
+  text-decoration-color: var(--color-dxw-teal);
+}

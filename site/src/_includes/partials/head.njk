@@ -1,0 +1,32 @@
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}" />
+
+    {% include "partials/head-google-fonts.njk" %}
+
+    {% set css %}
+    {% include "src/assets/css/main.css" %}
+    {% endset %}
+    <style>{{ css | cssMin | safe }}</style>
+
+    {% if styles %}
+      {# External styles first #}
+      {% for style in styles.external %}
+      <link rel="stylesheet" href="{{ style }}" />
+      {% endfor %}
+      {# Internal styles second #}
+      {% for style in styles.internal %}
+        {% set include_style %}assets/css/{{ style }}{% endset %}
+        {% set include_css %}
+          {% include include_style %}
+        {% endset %}
+      <style>{{ include_css | cssMin | safe }}</style>
+      {% endfor %}
+    {% endif %}
+
+    <script defer src="/assets/js/nav.js"></script>
+    <script defer src="/assets/js/search.js"></script>
+  </head>

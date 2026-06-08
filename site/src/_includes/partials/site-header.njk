@@ -1,0 +1,9 @@
+<header class="topbar">
+  <a class="brand" href="/">{{ site.title }}</a>
+  <nav class="topnav" aria-label="Primary">
+    {% for item in navigation %}
+    <a href="{{ item.url }}"{% activePath item.url, page.url %}>{{ item.name }}</a>
+    {% endfor %}
+  </nav>
+  {% include "partials/version-switcher.njk" %}
+</header>

@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 280px minmax(200px, 750px);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 1rem auto 2rem;
+  padding: 0 1rem;
+}
+
+.content,
+.sidebar,
+.topbar,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 920px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+}

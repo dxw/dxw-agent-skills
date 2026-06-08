@@ -21,3 +21,7 @@ node_modules
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Site build output
+/site/_site
+/site/.cache
