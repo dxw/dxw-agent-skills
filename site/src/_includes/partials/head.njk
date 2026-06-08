@@ -19,7 +19,7 @@
       {% endfor %}
       {# Internal styles second #}
       {% for style in styles.internal %}
-        {% set include_style %}assets/css/{{ style }}{% endset %}
+        {% set include_style %}src/assets/css/{{ style }}{% endset %}
         {% set include_css %}
           {% include include_style %}
         {% endset %}

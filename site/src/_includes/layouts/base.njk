@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="en">
   {% include "partials/head.njk" %}
-
-  <body>
+  <body class="{{ title | slugify }}{% if classes %} {{ classes | join(" ") }}{% endif %}">
     {% include "partials/site-header.njk" %}
     <div class="shell">
       {% include "partials/site-sidebar.njk" %}

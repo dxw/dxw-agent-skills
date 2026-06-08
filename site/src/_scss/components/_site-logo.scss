@@ -1,0 +1,16 @@
+.site-logo-link {
+  display: inline-block;
+}
+
+.site-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.site-brand__logo {
+  display: block;
+  width: auto;
+  height: 2rem;
+}

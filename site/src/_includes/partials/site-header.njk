@@ -1,5 +1,19 @@
 <header class="topbar">
-  <a class="brand" href="/">{{ site.title }}</a>
+  {% set isHomePage = page.url == "/" %}
+  {% if not isHomePage %}
+  <a class="site-logo-link" href="/" aria-label="{{ site.title }} home">
+  {% endif %}
+  <div class="site-brand">
+    <img
+      class="site-brand__logo"
+      src="/assets/images/primary-logo.svg"
+      alt="{{ site.title }} logo"
+    />
+    <span class="site-brand__title h2-style margin-block-nil">{{ site.title }}</span>
+  </div>
+  {% if not isHomePage %}
+  </a>
+  {% endif %}
   <nav class="topnav" aria-label="Primary">
     {% for item in navigation %}
     <a href="{{ item.url }}"{% activePath item.url, page.url %}>{{ item.name }}</a>

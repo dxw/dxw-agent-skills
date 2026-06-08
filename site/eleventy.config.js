@@ -4,11 +4,10 @@ import postCSS from "postcss";
 import autoprefixer from "autoprefixer";
 import UglifyJS from "uglify-js";
 
-/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
-
 export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("../.agents/");
+  eleventyConfig.addWatchTarget("content");
   eleventyConfig.addWatchTarget("src/_scss");
 
   // Minify CSS
