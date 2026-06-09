@@ -95,8 +95,8 @@
 }
 
 :where(pre) {
-  white-space: auto;
-  min-inline-size: 0;
+  white-space: pre;
+  min-inline-size: 100%;
   max-inline-size: max-content;
   writing-mode: lr;
   direction: ltr;
