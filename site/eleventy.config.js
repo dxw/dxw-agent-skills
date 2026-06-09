@@ -3,12 +3,21 @@ import CleanCSS from "clean-css";
 import postCSS from "postcss";
 import autoprefixer from "autoprefixer";
 import UglifyJS from "uglify-js";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
 export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("../.agents/");
-  eleventyConfig.addWatchTarget("content");
   eleventyConfig.addWatchTarget("src/_scss");
+
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
+    // The base URL: defaults to Path Prefix
+    // baseHref: eleventyConfig.pathPrefix,
+
+    // Comma separated list of output file extensions to apply
+    // our transform to. Use `false` to opt-out of the transform.
+    extensions: "html",
+  });
 
   // Minify CSS
   eleventyConfig.addFilter('cssMin', function (code) {
@@ -69,14 +78,15 @@ export default async function(eleventyConfig) {
 };
 
 export const config = {
-    dir: {
-      input: "content",
-      includes: "../src/_includes",
-      data: "../src/_data",
-      output: "_site",
-    },
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
-    templateFormats: ["md", "njk", "11ty.js"],
-    pathPrefix: "/",
+  dir: {
+    input: "content",
+    includes: "../src/_includes",
+    data: "../src/_data",
+    output: "_site",
+  },
+  htmlTemplateEngine: "njk",
+  markdownTemplateEngine: "njk",
+  templateFormats: ["md", "njk", "11ty.js"],
+  pathPrefix: "/",
+  passthroughFileCopy: true,
 };
