@@ -12,29 +12,27 @@
     "sass:build": "sass src/_scss/:src/assets/css/ --style=expanded --no-source-map",
     "sass:watch": "sass --watch src/_scss/:src/assets/css/ --style=expanded --no-source-map",
     "prebuild": "yarn sass:build && node scripts/build-search-index.mjs",
-    "dev": "yarn clean && yarn sass:build && node scripts/build-search-index.mjs && npx @11ty/eleventy --dryrun && concurrently --kill-others --names 11ty,sass \"npx @11ty/eleventy --serve\" \"yarn sass:watch\"",
+    "dev": "yarn clean && yarn prebuild && npx @11ty/eleventy --dryrun && concurrently --kill-others --names 11ty,sass \"npx @11ty/eleventy --serve\" \"yarn sass:watch\"",
     "build": "yarn clean && yarn prebuild && npx @11ty/eleventy",
     "validate:skills": "node scripts/validate-skill-frontmatter.mjs",
     "lint": "eslint . && prettier --check . && yarn validate:skills",
     "format": "prettier --write .",
     "test": "yarn build && node tests/run-all.mjs"
   },
-  "dependencies": {
-    "@11ty/eleventy": "^3.1.6",
-    "gray-matter": "^4.0.3",
-    "slugify": "^1.6.9"
-  },
   "devDependencies": {
+    "@11ty/eleventy": "3.1.5",
     "@eslint/js": "^9.39.4",
     "autoprefixer": "^10.5.0",
     "clean-css": "^5.3.3",
     "concurrently": "^9.2.1",
     "eslint": "^9.39.4",
     "globals": "^16.5.0",
+    "gray-matter": "^4.0.3",
     "luxon": "^3.7.2",
     "postcss": "^8.5.15",
     "prettier": "^3.8.3",
     "sass": "^1.100.0",
+    "slugify": "^1.6.9",
     "uglify-js": "^3.19.3"
   },
   "packageManager": "yarn@4.16.0+sha512.5374c94eb4ef6aa8188fb112f20c1aa6569f248d676c5e576e1fd2a1a4d8d87a96df65d9dfe1c2a0252cbe38bda46cf18d955005b81b43cc7607a5c9d56fd2b6"
