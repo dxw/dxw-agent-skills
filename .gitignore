@@ -26,3 +26,4 @@ node_modules
 /site/_site
 /site/.cache
 /site/src/assets/css/
+/site/src/_data/searchIndex.generated.json
