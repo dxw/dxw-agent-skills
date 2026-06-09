@@ -5,14 +5,14 @@
   "type": "module",
   "description": "11ty static docs site for .agents skills",
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
     "sass:build": "sass src/_scss/:src/assets/css/ --style=expanded --no-source-map",
     "sass:watch": "sass --watch src/_scss/:src/assets/css/ --style=expanded --no-source-map",
     "prebuild": "yarn sass:build && node scripts/build-search-index.mjs",
-    "dev": "yarn clean && (yarn sass:build) && (node scripts/build-search-index.mjs) && (npx @11ty/eleventy --dryrun) && (npx @11ty/eleventy --serve & yarn sass:watch)",
+    "dev": "yarn clean && yarn sass:build && node scripts/build-search-index.mjs && npx @11ty/eleventy --dryrun && concurrently --kill-others --names 11ty,sass \"npx @11ty/eleventy --serve\" \"yarn sass:watch\"",
     "build": "yarn clean && yarn prebuild && npx @11ty/eleventy",
     "validate:skills": "node scripts/validate-skill-frontmatter.mjs",
     "lint": "eslint . && prettier --check . && yarn validate:skills",
@@ -28,6 +28,7 @@
     "@eslint/js": "^9.39.4",
     "autoprefixer": "^10.5.0",
     "clean-css": "^5.3.3",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.4",
     "globals": "^16.5.0",
     "luxon": "^3.7.2",
