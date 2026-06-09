@@ -42,8 +42,8 @@ function readSkill(skillDirName) {
 
   return {
     slug: slugify(skillDirName, { lower: true, strict: true }),
-    name: skillDirName,
-    description,
+    name: title,
+    description: description,
     category: data.category || "uncategorized",
     tags: Array.isArray(data.tags) ? data.tags : [],
     owner: data.owner || "unassigned",
@@ -63,5 +63,5 @@ export default () => {
     .filter((entry) => entry.isDirectory())
     .map((entry) => readSkill(entry.name))
     .filter(Boolean)
-    .sort((a, b) => a.title.localeCompare(b.title));
+    .sort((a, b) => a.name.localeCompare(b.name));
 };
