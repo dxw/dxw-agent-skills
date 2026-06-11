@@ -7,7 +7,7 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
 export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
-  eleventyConfig.addWatchTarget("../.agents/");
+  eleventyConfig.addWatchTarget("./../.agents/");
   eleventyConfig.addWatchTarget("src/_scss");
 
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
@@ -79,10 +79,10 @@ export default async function(eleventyConfig) {
 
 export const config = {
   dir: {
-    input: "content",
+    input: "./content",
     includes: "../src/_includes",
     data: "../src/_data",
-    output: "_site",
+    output: "./_site",
   },
   htmlTemplateEngine: "njk",
   markdownTemplateEngine: "njk",
