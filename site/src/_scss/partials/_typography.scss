@@ -1,3 +1,5 @@
+@use "../tools/mixins";
+
 h1,
 h2,
 h3,
@@ -21,11 +23,53 @@ h6,
   margin: 0;
   mix-blend-mode: normal;
   margin-block: 1.5rem 0.75rem;
+  position: relative;
 
   &.h-underline {
     border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: var(--color-brand-primary);
+  }
+
+  // heading direct link hover
+  &:not(.hide-permalink, .title-bar--title) {
+    margin-inline-start: -2rem;
+    padding-inline-start: 2rem;
+
+    .direct-link {
+      font-size: var(--font-size-fluid-0);
+      line-height: 1rem;
+      font-weight: var(--font-weight-regular);
+      text-decoration: none;
+
+      &.do-not-display {
+        position: absolute;
+        top: 0;
+        left: var(--size-px-03);
+        color: var(--color-dxw-navy);
+      }
+    }
+
+    &:hover {
+      .do-not-display {
+        display: inline-block;
+        // background-color: var(--color-grey-light);
+        border-radius: var(--radius-2);
+        padding: var(--size-2);
+        transition: all 0.25s ease;
+
+        &:hover {
+          transition: all 0.25s ease;
+          // background-color: var(--color-grey-lighter);
+        }
+      }
+    }
+  }
+
+  &.hide-permalink {
+    .direct-link {
+      @include mixins.do-not-display;
+    }
   }
 }
 
@@ -83,4 +127,16 @@ h5,
 
 .text-right {
   text-align: right;
+}
+
+.hide-text {
+  @include mixins.hide-text;
+}
+
+.visually-hidden {
+  @include mixins.visually-hidden;
+}
+
+.do-not-display {
+  @include mixins.do-not-display;
 }
