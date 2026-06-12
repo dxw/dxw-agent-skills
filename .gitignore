@@ -27,3 +27,7 @@ node_modules
 /site/.cache
 /site/src/assets/css/
 /site/src/_data/searchIndex.generated.json
+
+# Contributed text example files
+/sample_files/*
+!/sample_files/.gitkeep
