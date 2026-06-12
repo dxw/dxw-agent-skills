@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+styles:
+  internal:
+    - "hljs-default-light.css"
+---
+<article class="doc-article skill-doc">
+  <header class="skill-header">
+    <p class="chip">Skill</p>
+    <h1>{{ skill.name }}</h1>
+    <p class="margin-block-vlg">{{ skill.description }}</p>
+    <ul class="meta-list">
+      <li><strong>Category:</strong> {{ skill.category }}</li>
+      <li><strong>Owner:</strong> {{ skill.owner }}</li>
+      <li><strong>Status:</strong> {{ skill.status }}</li>
+      <li><strong>Last Reviewed:</strong> {{ skill.lastReviewed | htmlDateString or "n/a" }}</li>
+    </ul>
+    {% if skill.tags.length %}
+    <div class="tag-row">
+      {% for tag in skill.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if skill.metadataMissing.length %}
+    <p class="warn">
+      Missing metadata fields: {{ skill.metadataMissing | join(", ") }}
+    </p>
+    {% endif %}
+  </header>
+  <section class="prose margin-block-vlg">
+    {% Markdown %}
+```markdown
+
+{{ skill.content | safe }}
+
+```
+{% endMarkdown %}
+  </section>
+</article>

@@ -1,0 +1,86 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1-style,
+.h2-style,
+.h3-style,
+.h4-style,
+.h5-style,
+.h6-style {
+  color: inherit;
+  font-family: var(--font-headings);
+  font-weight: var(--font-weight-headings);
+  font-style: normal;
+  font-stretch: normal;
+  line-height: var(--font-lineheight-1);
+  text-wrap: balance;
+  letter-spacing: normal;
+  margin: 0;
+  mix-blend-mode: normal;
+  margin-block: 1.5rem 0.75rem;
+
+  &.h-underline {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-brand-primary);
+  }
+}
+
+h1,
+.h1-style {
+  font-size: var(--font-size-fluid-3);
+  max-inline-size: var(--size-header-1);
+}
+
+h2,
+.h2-style {
+  font-size: var(--font-size-fluid-2);
+  max-inline-size: var(--size-header-2);
+}
+
+h3,
+.h3-style {
+  font-size: var(--font-size-fluid-1);
+  max-inline-size: var(--size-header-3);
+}
+
+// // Subheading, slightly different styling.
+h4,
+.h4-style {
+  font-size: var(--font-size-fluid-01);
+  max-inline-size: var(--size-header-3);
+}
+
+h5,
+.h5-style {
+  font-size: var(--font-size-fluid-0);
+  max-inline-size: var(--size-header-3);
+}
+
+.secondary-font {
+  font-family: var(--font-secondary);
+}
+
+.headings-font {
+  font-family: var(--font-headings);
+}
+
+// Helpers - Additions to help with reuseable code approach. Add classes to achieve styles rather than nesting.
+.bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.centered {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}

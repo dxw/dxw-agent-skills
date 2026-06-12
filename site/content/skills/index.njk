@@ -1,0 +1,59 @@
+---
+layout: layouts/doc.njk
+title: Skills
+permalink: "/skills/index.html"
+---
+
+{% set uniqueCategories = [] %}
+{% for skill in skills %}
+  {% if skill.category not in uniqueCategories %}
+    {% set uniqueCategories = uniqueCategories.concat([skill.category]) %}
+  {% endif %}
+{% endfor %}
+
+<div class="skill-filter">
+  <h3>Filter by category</h3>
+  <div class="skill-filter__buttons">
+    <button class="skill-filter__button skill-filter__button--active" data-category="all">
+      All
+    </button>
+    {% for category in uniqueCategories | sort %}
+      <button class="skill-filter__button" data-category="{{ category }}">
+        {{ category | capitalize }}
+      </button>
+    {% endfor %}
+  </div>
+</div>
+
+<ul class="skill-list">
+  {% for skill in skills %}
+  <li class="skill-list__item" data-category="{{ skill.category }}">
+    <h2 class="h4-style"><a href="/skills/{{ skill.slug }}/">{{ skill.name }}</a></h2>
+    <p>{{ skill.description }}</p>
+  </li>
+  {% endfor %}
+</ul>
+
+<script>
+document.querySelectorAll('.skill-filter__button').forEach(button => {
+  button.addEventListener('click', function() {
+    const selectedCategory = this.getAttribute('data-category');
+
+    // Update active button state
+    document.querySelectorAll('.skill-filter__button').forEach(btn => {
+      btn.classList.remove('skill-filter__button--active');
+    });
+    this.classList.add('skill-filter__button--active');
+
+    // Filter skills
+    document.querySelectorAll('.skill-list__item').forEach(item => {
+      const itemCategory = item.getAttribute('data-category');
+      if (selectedCategory === 'all' || itemCategory === selectedCategory) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+</script>

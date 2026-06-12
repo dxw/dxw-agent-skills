@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+styles:
+  internal:
+    - "hljs-default-light.css"
+---
+<article class="doc-article">
+  {% if title %}<h1>{{ title }}</h1>{% endif %}
+  {{ content | safe }}
+</article>

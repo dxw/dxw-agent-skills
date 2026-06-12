@@ -14,10 +14,20 @@ node_modules
 .env
 
 # Yarn
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+**/.pnp.*
+**/.yarn/*
+**/!.yarn/patches
+**/!.yarn/plugins
+**/!.yarn/releases
+**/!.yarn/sdks
+**/!.yarn/versions
+
+# Site build output
+/site/_site
+/site/.cache
+/site/src/assets/css/
+/site/src/_data/searchIndex.generated.json
+
+# Contributed text example files
+/sample_files/*
+!/sample_files/.gitkeep

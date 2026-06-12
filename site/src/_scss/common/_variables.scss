@@ -1,0 +1,27 @@
+@use "sass:color";
+@use "../tools/px-to-rem";
+@use "base-variables";
+
+/* ==========================================================================
+VARIABLES
+========================================================================== */
+
+// Custom media queries
+$break-very-small: 26rem; // >= 416px @ 16px
+$break-small: 36rem; // >= 576px @ 16px
+$break-medium: 48rem; // >= 768px @ 16px
+$break-large: 64rem; // >= 1024px @ 16px
+$break-extra-large: 80rem; // >= 1280px @ 16px
+$break-largest: 90rem; // >= 1440px @ 16px
+
+// Fonts
+$primary-font: "Cardo", serif;
+$secondary-font: "Poppins", sans-serif;
+$headings-font: "Poppins", sans-serif;
+
+// Font weight
+$base-font-weight-bold: 700;
+$base-font-weight-semi-bold: 600;
+$base-font-weight-regular: 400;
+$base-font-weight-light: 300;
+$headings-font-weight: $base-font-weight-semi-bold;

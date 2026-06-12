@@ -1,0 +1,9 @@
+<aside class="sidebar">
+  {% include "partials/search-box.njk" %}
+  <h2>Skills</h2>
+  <ul>
+    {% for skill in skills %}
+    <li><a href="/skills/{{ skill.slug }}/">{{ skill.name }}</a></li>
+    {% endfor %}
+  </ul>
+</aside>

@@ -1,0 +1,24 @@
+
+.topnav {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-secondary);
+
+  a {
+    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+    font-size: var(--size-fluid-1);
+    font-weight: var(--font-weight-bold);
+
+    &:hover {
+      text-decoration-color: var(--color-dxw-teal);
+    }
+
+    &.current {
+      text-decoration-color: var(--color-dxw-teal);
+    }
+  }
+}

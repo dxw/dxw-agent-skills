@@ -1,0 +1,8 @@
+@use "tools/mixins" as mx;
+
+.home {
+
+  h1 {
+    @include mx.do-not-display;
+  }
+}

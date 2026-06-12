@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+  {% include "partials/head.njk" %}
+  <body class="{{ title | slugify }}{% if classes %} {{ classes | join(" ") }}{% endif %}">
+    {% include "partials/site-header.njk" %}
+    <div class="shell">
+      {% include "partials/site-sidebar.njk" %}
+      <main id="content" class="content">{{ content | safe }}</main>
+    </div>
+    {% include "partials/site-footer.njk" %}
+  </body>
+</html>
