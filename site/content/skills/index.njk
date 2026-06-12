@@ -7,7 +7,7 @@ permalink: "/skills/index.html"
 <ul class="skill-list">
   {% for skill in skills %}
   <li>
-    <a href="/skills/{{ skill.slug }}/">{{ skill.name }}</a>
+    <h2 class="h4-style"><a href="/skills/{{ skill.slug }}/">{{ skill.name }}</a></h2>
     <p>{{ skill.description }}</p>
   </li>
   {% endfor %}
