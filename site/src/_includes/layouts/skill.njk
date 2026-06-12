@@ -28,7 +28,13 @@ styles:
     </p>
     {% endif %}
   </header>
-  <section class="prose">
-    <pre><code>{{ skill.content }}</code></pre>
+  <section class="prose margin-block-vlg">
+    {% Markdown %}
+```markdown
+
+{{ skill.content | safe }}
+
+```
+{% endMarkdown %}
   </section>
 </article>
