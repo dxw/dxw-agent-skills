@@ -1,0 +1,50 @@
+.skill-filter {
+  margin-block-end: 2rem;
+
+  h3 {
+    margin-block-end: 1rem;
+    font-size: 1rem;
+    font-weight: var(--font-weight-semi-bold);
+  }
+}
+
+.skill-filter__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-filter__button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-dxw-blue-light);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--color-dxw-blue-mid);
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-semi-bold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-dxw-blue-light);
+    color: var(--color-dxw-navy);
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-dxw-blue-mid);
+    outline-offset: 2px;
+  }
+}
+
+.skill-filter__button--active {
+  background-color: var(--color-dxw-blue-mid);
+  color: var(--color-dxw-ivory);
+  border-color: var(--color-dxw-blue-mid);
+
+  &:hover {
+    background-color: var(--color-dxw-blue);
+    color: var(--color-dxw-ivory);
+    border-color: var(--color-dxw-blue);
+  }
+}
