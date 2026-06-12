@@ -13,8 +13,8 @@ import hljs from 'highlight.js';
 
 export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
-  eleventyConfig.addWatchTarget("./../.agents/");
   eleventyConfig.addWatchTarget("src/_scss");
+  eleventyConfig.addWatchTarget("./../.agents/");
 
   eleventyConfig.setFrontMatterParsingOptions({
 		excerpt: true,
@@ -97,7 +97,7 @@ export default async function(eleventyConfig) {
     .use(markdownItAnchor, {
       permalink: markdownItAnchor.permalink.ariaHidden({
         placement: "after",
-        class: "direct-link visually-hidden",
+        class: "direct-link do-not-display",
         symbol: "#",
         level: [1,2,3,4],
       }),

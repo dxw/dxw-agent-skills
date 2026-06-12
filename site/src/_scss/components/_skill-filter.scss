@@ -1,9 +1,9 @@
 .skill-filter {
-  margin-block-end: 2rem;
+  margin-block-end: var(--size-7);
 
   h3 {
-    margin-block-end: 1rem;
-    font-size: 1rem;
+    margin-block-end: var(--size-3);
+    font-size: var(--font-size-1);
     font-weight: var(--font-weight-semi-bold);
   }
 }
@@ -11,17 +11,18 @@
 .skill-filter__buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: var(--size-3);
 }
 
 .skill-filter__button {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--color-dxw-blue-light);
-  border-radius: 4px;
+  padding: var(--size-1) var(--size-2);
+  border-width: var(--size-px-01);
+  border-style: solid;
+  border-color: var(--color-dxw-blue-light);
+  border-radius: var(--size-px-1);
   background-color: transparent;
   color: var(--color-dxw-blue-mid);
-  font-family: var(--font-secondary);
-  font-size: 0.95rem;
+  font-size: var(--font-size-0);
   font-weight: var(--font-weight-semi-bold);
   cursor: pointer;
   transition: all 0.2s ease;
@@ -33,7 +34,7 @@
 
   &:focus {
     outline: 2px solid var(--color-dxw-blue-mid);
-    outline-offset: 2px;
+    outline-offset: var(--size-px-02);
   }
 }
 
