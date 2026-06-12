@@ -1,0 +1,31 @@
+.footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  margin-block-start: 2rem;
+  padding: 1.75rem 0 calc(2rem + clamp(5rem, 10vw, 8rem));
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-dxw-navy);
+  color: var(--color-dxw-ivory);
+
+  h2 {
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-fluid-3);
+  }
+}
+
+.footer__content {
+  max-width: 67.5rem;
+  width: 100%;
+  color: var(--color-dxw-ivory);
+}
+
+.footer__logo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: clamp(5rem, 10vw, 8rem);
+  height: auto;
+  pointer-events: none;
+}

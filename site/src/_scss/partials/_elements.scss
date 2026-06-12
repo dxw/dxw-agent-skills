@@ -138,6 +138,31 @@
   --size-relative-14: 20ch;
   --size-relative-15: 30ch;
 
+  --font-lineheight-00: .95;
+  --font-lineheight-0: 1.1;
+  --font-lineheight-1: 1.25;
+  --font-lineheight-2: 1.375;
+  --font-lineheight-3: 1.5;
+  --font-lineheight-4: 1.75;
+  --font-lineheight-5: 2;
+  --font-letterspacing-0: -.05em;
+  --font-letterspacing-1: .025em;
+  --font-letterspacing-2: .050em;
+  --font-letterspacing-3: .075em;
+  --font-letterspacing-4: .150em;
+  --font-letterspacing-5: .500em;
+  --font-letterspacing-6: .750em;
+  --font-letterspacing-7: 1em;
+  --font-size-00: .5rem;
+  --font-size-0: .75rem;
+  --font-size-1: 1rem;
+  --font-size-2: 1.1rem;
+  --font-size-3: 1.25rem;
+  --font-size-4: 1.5rem;
+  --font-size-5: 2rem;
+  --font-size-6: 2.5rem;
+  --font-size-7: 3rem;
+  --font-size-8: 3.5rem;
   --font-size-fluid-000: clamp(0.5rem, 1.3vw, 0.75rem);
   --font-size-fluid-00: clamp(0.6666666667rem, 1.4vw, 0.9rem);
   --font-size-fluid-0: clamp(0.9rem, 1.5vw, 1rem);
@@ -157,6 +182,7 @@
   font-weight: var(--font-weight-regular);
   color: var(--color-text);
   background-color: var(--color-background-light);
+  margin: 0;
 }
 
 :where(a) {

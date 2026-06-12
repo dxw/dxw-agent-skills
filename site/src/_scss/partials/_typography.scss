@@ -15,6 +15,8 @@ h6,
   font-weight: var(--font-weight-headings);
   font-style: normal;
   font-stretch: normal;
+  line-height: var(--font-lineheight-1);
+  text-wrap: balance;
   letter-spacing: normal;
   margin: 0;
   mix-blend-mode: normal;
@@ -30,11 +32,13 @@ h6,
 h1,
 .h1-style {
   font-size: var(--font-size-fluid-3);
+  max-inline-size: var(--size-header-1);
 }
 
 h2,
 .h2-style {
   font-size: var(--font-size-fluid-2);
+  max-inline-size: var(--size-header-2);
 }
 
 h3,
