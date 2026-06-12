@@ -4,11 +4,23 @@ import postCSS from "postcss";
 import autoprefixer from "autoprefixer";
 import UglifyJS from "uglify-js";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import slugify from "slugify";
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItAttrs from "markdown-it-attrs";
+import markdownItHightlightjs from "markdown-it-highlightjs";
+import hljs from 'highlight.js';
 
 export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("./../.agents/");
   eleventyConfig.addWatchTarget("src/_scss");
+
+  eleventyConfig.setFrontMatterParsingOptions({
+		excerpt: true,
+		// Optional, default is "---"
+		excerpt_separator: "---+---",
+	});
 
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
     // The base URL: defaults to Path Prefix
@@ -74,6 +86,34 @@ export default async function(eleventyConfig) {
   eleventyConfig.addCollection("changelogEntries", (collectionApi) =>
     collectionApi.getFilteredByGlob("content/changelog/*.md").reverse(),
   );
+
+
+  // Customize Markdown library and settings:
+  let markdownLibrary = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true
+  })
+    .use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.ariaHidden({
+        placement: "after",
+        class: "direct-link visually-hidden",
+        symbol: "#",
+        level: [1,2,3,4],
+      }),
+      slugify: eleventyConfig.getFilter("slugify")
+    })
+    .use(markdownItHightlightjs, {hljs})
+    .use(markdownItAttrs);
+  eleventyConfig.setLibrary("md", markdownLibrary);
+
+  eleventyConfig.addFilter("markdown", (content, ril = false) => {
+    return ril ? markdownLibrary.renderInline(content) : markdownLibrary.render(content);
+  });
+
+  eleventyConfig.addPairedShortcode("Markdown", (content, ril = false) => {
+    return ril ? markdownLibrary.renderInline(content) : markdownLibrary.render(content);
+  });
 
 };
 

@@ -1,7 +1,8 @@
 <ul>
 {% for item in items %}
   <li class="changelog-entry">
-    <a href="{{ item.url }}">{{ item.data.date | readableDate }}</a> {{ item.content | safe }}
+    <h2 class="h4-style"><a href="{{ item.url }}">{{ item.data.date | readableDate }}</a></h2>
+    {{ item.page.excerpt | safe }}
   </li>
 {% endfor %}
 </ul>
