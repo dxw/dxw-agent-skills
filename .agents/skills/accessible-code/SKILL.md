@@ -1,6 +1,6 @@
 ---
 name: accessible-code
-description: Helps write and review code against dxw accessibility house style, with practical checks for semantic HTML, naming, and keyboard/focus behaviour.
+description: Helps write and review code against dxw accessibility house style, with practical checks for semantic HTML, naming, and keyboard/focus behaviour. Use when users ask for accessible implementation guidance, accessibility-focused code review, or improvements to existing UI code. Focus on concrete, code-level recommendations that improve assistive technology support.
 tags: [accessibility, frontend, html, css]
 category: code quality
 owner: dxw
@@ -18,6 +18,7 @@ When responding:
 
 - Prefer native HTML semantics over ARIA workarounds.
 - Apply dxw house style and GOV.UK Design System patterns where appropriate.
+- Code should have WCAG 2.2 AA compliance as a baseline, but focus on practical improvements that enhance assistive technology support.
 - Give concrete, code-level recommendations, not generic accessibility advice.
 - If suggesting changes, explain why they improve assistive technology support.
 
