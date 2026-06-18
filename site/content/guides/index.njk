@@ -1,0 +1,19 @@
+---
+layout: layouts/doc.njk
+title: Guides
+permalink: "/guides/index.html"
+pagination:
+  data: collections.guides
+  size: 10
+  alias: items
+---
+
+
+<p>This page provides a collection of guides for tools and skills documented in this site.</p>
+
+<hr />
+
+
+{% include "partials/guides-list.njk" %}
+
+{% include "partials/pagination.njk" %}

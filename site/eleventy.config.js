@@ -87,6 +87,48 @@ export default async function(eleventyConfig) {
     collectionApi.getFilteredByGlob("content/changelog/*.md").reverse(),
   );
 
+  eleventyConfig.addCollection("guides", (collectionApi) =>
+    collectionApi.getFilteredByGlob("content/guides/*.md").reverse(),
+  );
+
+
+  // Sort items in a collection by date, ascending
+  function sortByDate(collection) {
+    return collection.sort((a, b) => {
+      if (a.data.date < b.data.date) return -1;
+      else if (a.data.date > b.data.date) return 1;
+      else return 0;
+    });
+  }
+
+  // Sort items in a collection alphabetically by title
+  function sortByTitle(collection) {
+    return collection.sort((a, b) => {
+      if (a.data.title.toLowerCase() < b.data.title.toLowerCase()) return -1;
+      else if (a.data.title.toLowerCase() > b.data.title.toLowerCase()) return 1;
+      else return 0;
+    });
+  }
+
+  // Sort items in a collection by an order field, ascending. If andSticky is true, items with a sticky field will be sorted to the end of the collection.
+  function sortByOrder(collection, field = 'order', andSticky = false) {
+    if (field == 'eleventyNavigation') {
+      return collection.sort((a, b) => {
+        if (andSticky && b.data.sticky) return 1;
+        else if (a.data.eleventyNavigation.order < b.data.eleventyNavigation.order) return -1;
+        else if (a.data.eleventyNavigation.order > b.data.eleventyNavigation.order) return 1;
+        else return 0;
+      });
+    }
+    else {
+      return collection.sort((a, b) => {
+        if (andSticky && b.data.sticky) return 1;
+        else if (a.data.order < b.data.order) return -1;
+        else if (a.data.order > b.data.order) return 1;
+        else return 0;
+      });
+    }
+  }
 
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
