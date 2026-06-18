@@ -1,6 +1,6 @@
-<ul>
+<ul class="item-list changelog-list">
 {% for item in items %}
-  <li class="changelog-entry">
+  <li class="item-list--item changelog-list--item">
     <h2 class="h4-style"><a href="{{ item.url }}">{{ item.data.date | readableDate }}</a></h2>
     {{ item.page.excerpt | safe }}
   </li>

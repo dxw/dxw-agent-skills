@@ -193,3 +193,7 @@
     color: inherit;
     text-decoration: underline;
 }
+
+:where(hr) {
+  margin-block: var(--size-7);
+}
