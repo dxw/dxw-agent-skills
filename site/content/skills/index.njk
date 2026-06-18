@@ -25,7 +25,9 @@ permalink: "/skills/index.html"
   </div>
 </div>
 
-{% include "partials/skills-list.njk" %}
+{% set listName = "skill" %}
+{% set items = skills %}
+{% include "partials/item-list.njk" %}
 
 <script>
 document.querySelectorAll('.skill-filter__button').forEach(button => {

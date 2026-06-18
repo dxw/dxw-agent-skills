@@ -8,10 +8,11 @@ pagination:
   alias: items
 ---
 
-## Project Changelog
-
 This page summarizes changes for the documentation site.
 
-{% include "partials/changelog-list.njk" %}
+---
+
+{% set listName = "changelog" %}
+{% include "partials/item-list.njk" %}
 
 {% include "partials/pagination.njk" %}

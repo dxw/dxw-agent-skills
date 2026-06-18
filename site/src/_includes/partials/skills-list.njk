@@ -1,8 +1,0 @@
-<ul class="item-list skill-list">
-{% for skill in skills %}
-  <li class="item-list--item skill-list__item" data-category="{{ skill.category }}">
-    <h2 class="h4-style"><a href="/skills/{{ skill.slug }}/">{{ skill.name }}</a></h2>
-    <p>{{ skill.description }}</p>
-  </li>
-{% endfor %}
-</ul>
