@@ -1,0 +1,10 @@
+.item-list {
+  list-style: none;
+  padding: 0;
+}
+
+.item-list--item {
+  &:not(:last-child) {
+    margin-block-end: var(--size-5);
+  }
+}

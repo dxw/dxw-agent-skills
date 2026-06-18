@@ -25,14 +25,9 @@ permalink: "/skills/index.html"
   </div>
 </div>
 
-<ul class="skill-list">
-  {% for skill in skills %}
-  <li class="skill-list__item" data-category="{{ skill.category }}">
-    <h2 class="h4-style"><a href="/skills/{{ skill.slug }}/">{{ skill.name }}</a></h2>
-    <p>{{ skill.description }}</p>
-  </li>
-  {% endfor %}
-</ul>
+{% set listName = "skill" %}
+{% set items = skills %}
+{% include "partials/item-list.njk" %}
 
 <script>
 document.querySelectorAll('.skill-filter__button').forEach(button => {
