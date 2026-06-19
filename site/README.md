@@ -34,6 +34,6 @@ Frontmatter is expected to contain:
 - `tags`
 - `owner`
 - `status`
-- `last_reviewed`
+- `lastReviewed`
 
 Use `yarn validate:skills` to enforce this metadata.

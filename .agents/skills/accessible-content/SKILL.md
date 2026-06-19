@@ -5,7 +5,7 @@ tags: [accessibility, content, writing, forms]
 category: content quality
 owner: dxw
 status: active
-last_reviewed: 2026-06-18
+lastReviewed: 2026-06-18
 ---
 
 Source: [dxw Accessibility Manual — Creating accessible content](https://accessibility.dxw.com/content/)

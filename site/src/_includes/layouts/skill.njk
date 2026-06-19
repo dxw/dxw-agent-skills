@@ -29,10 +29,17 @@ styles:
     {% endif %}
   </header>
   <section class="prose margin-block-vlg">
+    {{ skill.content | markdown | safe }}
+
     {% Markdown %}
+
+---
+
+## Full skill file content
+
 ```markdown
 
-{{ skill.content | safe }}
+{{ skill.fullData | safe }}
 
 ```
 {% endMarkdown %}

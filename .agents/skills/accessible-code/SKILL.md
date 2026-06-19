@@ -5,7 +5,7 @@ tags: [accessibility, frontend, html, css]
 category: code quality
 owner: dxw
 status: active
-last_reviewed: 2026-06-12
+lastReviewed: 2026-06-12
 ---
 
 Source: [dxw Accessibility Manual - Writing accessible code](https://accessibility.dxw.com/development/writing-acessible-code/)
