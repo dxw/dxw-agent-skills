@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 
-const required = ["name", "description", "category", "tags", "owner", "status", "last_reviewed"];
+const required = ["name", "description", "category", "tags", "owner", "status", "lastReviewed"];
 
 const rootDir = path.resolve(import.meta.dirname, "..");
 const skillsDir = path.resolve(rootDir, "../.agents/skills");

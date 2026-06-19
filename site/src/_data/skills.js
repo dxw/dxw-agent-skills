@@ -11,7 +11,7 @@ const REQUIRED_FRONTMATTER = [
   "tags",
   "owner",
   "status",
-  "last_reviewed",
+  "lastReviewed",
 ];
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -48,10 +48,11 @@ function readSkill(skillDirName) {
     tags: Array.isArray(data.tags) ? data.tags : [],
     owner: data.owner || "unassigned",
     status: data.status || "draft",
-    lastReviewed: data.last_reviewed || "",
+    lastReviewed: data.lastReviewed || "",
     sourcePath: skillPath,
     content: parsed.content.trim(),
     metadataMissing: missingFields,
+    fullData: file,
   };
 }
 

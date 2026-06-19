@@ -6,7 +6,7 @@ tags: [git, code review]
 category: code review
 owner: joesb
 status: active
-last_reviewed: 2026-06-09
+lastReviewed: 2026-06-09
 ---
 ## What to review
 !`git diff main…HEAD --staged`
