@@ -1,0 +1,11 @@
+{
+  "name": "dxw-agent-skills",
+  "private": true,
+  "packageManager": "yarn@4.17.0",
+  "workspaces": [
+    "site"
+  ],
+  "engines": {
+    "node": ">=24"
+  }
+}
