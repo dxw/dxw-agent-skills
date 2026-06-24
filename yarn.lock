@@ -2465,7 +2465,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"posthtml@npm:^0.16.7":
+"posthtml@npm:^0.16.6, posthtml@npm:^0.16.7":
   version: 0.16.7
   resolution: "posthtml@npm:0.16.7"
   dependencies:
@@ -2776,7 +2776,7 @@ __metadata:
     markdown-it-eleventy-img: "npm:^0.10.2"
     markdown-it-highlightjs: "npm:^4.3.0"
     postcss: "npm:^8.5.15"
-    posthtml: "npm:^0.16.7"
+    posthtml: "npm:^0.16.6"
     prettier: "npm:^3.8.3"
     sass: "npm:^1.100.0"
     slugify: "npm:^1.6.9"
