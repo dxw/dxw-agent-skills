@@ -6,7 +6,7 @@ A repository of AI agent skills for dxw projects.
 
 ## Documentation site
 
-The documentation site lives in the `/site/` folder and is built with [Eleventy](https://www.11ty.dev/). It requires Node.js >=24.0.0.
+The documentation site lives in the `/site/` folder and is built with [Eleventy](https://www.11ty.dev/). It requires Node.js 24.x.
 
 This repo uses [Yarn workspaces](https://yarnpkg.com/features/workspaces), so all commands are run from the repo root.
 
