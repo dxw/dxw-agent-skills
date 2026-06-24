@@ -707,33 +707,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"agent-skills-docs-site@workspace:site":
-  version: 0.0.0-use.local
-  resolution: "agent-skills-docs-site@workspace:site"
-  dependencies:
-    "@11ty/eleventy": "npm:3.1.5"
-    "@eslint/js": "npm:^9.39.4"
-    autoprefixer: "npm:^10.5.0"
-    clean-css: "npm:^5.3.3"
-    concurrently: "npm:^9.2.1"
-    eslint: "npm:^9.39.4"
-    globals: "npm:^16.5.0"
-    gray-matter: "npm:^4.0.3"
-    highlight.js: "npm:^11.11.1"
-    luxon: "npm:^3.7.2"
-    markdown-it: "npm:^14.2.0"
-    markdown-it-anchor: "npm:^9.2.0"
-    markdown-it-attrs: "npm:4.5.0"
-    markdown-it-eleventy-img: "npm:^0.10.2"
-    markdown-it-highlightjs: "npm:^4.3.0"
-    postcss: "npm:^8.5.15"
-    prettier: "npm:^3.8.3"
-    sass: "npm:^1.100.0"
-    slugify: "npm:^1.6.9"
-    uglify-js: "npm:^3.19.3"
-  languageName: unknown
-  linkType: soft
-
 "ajv@npm:^6.14.0":
   version: 6.15.0
   resolution: "ajv@npm:6.15.0"
@@ -2757,6 +2730,33 @@ __metadata:
   checksum: 10c0/846c3fdd1325318d5c71295cfbb99bfc9edc4c8dffdda5e6e9efe30482bbcd32cf360fc2806f46ac43ff7d09bcfaff20337bb79f826f0e6a8e366efd3cdd7868
   languageName: node
   linkType: hard
+
+"site@workspace:site":
+  version: 0.0.0-use.local
+  resolution: "site@workspace:site"
+  dependencies:
+    "@11ty/eleventy": "npm:3.1.5"
+    "@eslint/js": "npm:^9.39.4"
+    autoprefixer: "npm:^10.5.0"
+    clean-css: "npm:^5.3.3"
+    concurrently: "npm:^9.2.1"
+    eslint: "npm:^9.39.4"
+    globals: "npm:^16.5.0"
+    gray-matter: "npm:^4.0.3"
+    highlight.js: "npm:^11.11.1"
+    luxon: "npm:^3.7.2"
+    markdown-it: "npm:^14.2.0"
+    markdown-it-anchor: "npm:^9.2.0"
+    markdown-it-attrs: "npm:4.5.0"
+    markdown-it-eleventy-img: "npm:^0.10.2"
+    markdown-it-highlightjs: "npm:^4.3.0"
+    postcss: "npm:^8.5.15"
+    prettier: "npm:^3.8.3"
+    sass: "npm:^1.100.0"
+    slugify: "npm:^1.6.9"
+    uglify-js: "npm:^3.19.3"
+  languageName: unknown
+  linkType: soft
 
 "slash@npm:^3.0.0":
   version: 3.0.0
