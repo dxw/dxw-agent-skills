@@ -5,7 +5,7 @@
   "type": "module",
   "description": "11ty static docs site for .agents skills",
   "engines": {
-    "node": ">=24.0.0"
+    "node": "24.x"
   },
   "scripts": {
     "clean": "rm -rf _site .cache",
