@@ -1,2 +1,1 @@
-worker: yarn workspace site build
-web: bin/start-nginx-static
+web: yarn workspace site build & bin/start-nginx-static
