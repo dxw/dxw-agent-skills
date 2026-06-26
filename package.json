@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "yarn@4.17.0",
   "scripts": {
-    "heroku-postbuild": "yarn workspace site build"
+    "heroku-postbuild": "cd site && yarn build"
   },
   "workspaces": [
     "site"
